@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <header>
     <div class='header-right'>
         <div>
@@ -15,7 +19,7 @@
             <a href="/post/tutorial.php">آموزشی</a>
             <a href="/post/buy-toturial.php">راهنمای خرید</a>
             <a href="/post/re-act.php">نقد و بررسی</a>
-            <a href="/panel/auth.php" class='profile-button'>
+            <a href="<?= isset($_SESSION['user_id']) ? '/panel/panel.php' : '/panel/auth.php' ?>" class="profile-button">
                 <img src="/assets/image/logo/profile.png" alt="profile-image">
             </a>
         </nav>

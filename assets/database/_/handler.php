@@ -6,8 +6,8 @@ class Database {
     public function __construct(
         string $host = 'localhost',
         string $dbname = 'digipost',
-        string $username = 'root',
-        string $password = ''
+        string $username = 'digipost_user',
+        string $password = 'jzx144'
     ) {
         $this->connection = new PDO(
             "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
@@ -109,6 +109,16 @@ class User {
 
         return $query->execute([$id]);
     }
+
+    public function getByUsername(string $username): array|false {
+        $query = $this->connection->prepare(
+            "SELECT id, username FROM users WHERE username = ?"
+        );
+
+        $query->execute([$username]);
+
+        return $query->fetch();
+    }
 }
 
 class Post {
@@ -172,10 +182,15 @@ class Post {
 
         return $query->execute([$id]);
     }
+
+    public function getByUsername(string $username): array|false {
+        $query = $this->connection->prepare(
+            "SELECT id, username FROM users WHERE username = ?"
+        );
+
+        $query->execute([$username]);
+
+        return $query->fetch();
+    }
 }
-
-$db = new Database();
-
-$user = $db->users();
-$post = $db->posts();
 ?>
