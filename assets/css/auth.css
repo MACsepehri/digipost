@@ -52,3 +52,8 @@ main {
     margin: auto;
     text-align: center;
 }
+
+.err {
+    color: red;
+    font-size: 14px;
+}

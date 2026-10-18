@@ -19,11 +19,19 @@
         </div><br>
         <div class='flex'>
             <form action="/panel/complete.php" id='auth-form' method='post'>
-                <input type="text" placeholder='نام کاربری'><br>
-                <input type="password" placeholder='رمز عبور'><br>
-            </form><br>
+                <input type="text" placeholder='نام کاربری'
+                name='username'><br>
+                <span id='username-err' class='err'></span><br>
+                <input type="password" placeholder='رمز عبور'
+                name='password'><br>
+                <span id='password-err' class='err'></span>
+            </form>
+            <pre>ما به هیچ عنوان مسئولیت هک شدن 
+شما به دلیل رمز عبور ضعیف نمیپذیریم.</pre>
             <button id='submit-auth'>ادامه</button>
         </div>
     </main>
+
+    <script src='/assets/js/auth.js'></script>
 </body>
 </html>
