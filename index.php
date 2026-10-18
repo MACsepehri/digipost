@@ -13,7 +13,7 @@
         include 'assets/base/header.php';
     ?>
     <main>
-        <div class='random-post-box'>
+        <div class='default-post-box'>
             <h2>خبر های شانسی</h2>
             <div>
                 <p>خبری وجود ندارد</p>
