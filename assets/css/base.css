@@ -70,6 +70,15 @@ main {
     color: var(--blue);
 }
 
+.default-box {
+    width: 80%;
+    margin: auto;
+}
+
+.default-box h2 {
+    text-align: right;
+}
+
 a {
     text-decoration: none;
     color: var(--blue);

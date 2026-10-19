@@ -13,7 +13,7 @@
         include 'assets/base/header.php';
     ?>
     <main>
-        <div class='default-post-box'>
+        <div class='default-box'>
             <div class='post-right'>
                 
             </div>

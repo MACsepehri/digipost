@@ -4,6 +4,16 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+ini_set('session.gc_maxlifetime', 315360000);
+
+session_set_cookie_params([
+    'lifetime' => 315360000,
+    'path' => '/',
+    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
+
 session_start();
 
 require_once __DIR__ . '/../assets/database/_/handler.php';
@@ -23,6 +33,8 @@ unset($_SESSION['adminPassword']);
 $login = $user->login($username, $password);
 
 if ($login !== false) {
+    session_regenerate_id(true);
+
     $_SESSION['user_id'] = $login['id'];
     $_SESSION['username'] = $login['username'];
 
@@ -44,6 +56,8 @@ $user->create($username, $password);
 $login = $user->login($username, $password);
 
 if ($login !== false) {
+    session_regenerate_id(true);
+
     $_SESSION['user_id'] = $login['id'];
     $_SESSION['username'] = $login['username'];
 

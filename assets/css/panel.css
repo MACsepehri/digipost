@@ -1,0 +1,16 @@
+.header-box {
+    width: 300px;
+    padding: 10px;
+    border-radius: 80px;
+    background: #eef6ff;
+    border: 2px solid #b8c5d5;
+    margin: auto;
+    text-align: center;
+}
+
+.header-box button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #687f9a;
+}
