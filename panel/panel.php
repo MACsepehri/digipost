@@ -35,6 +35,9 @@ if (!isset($_SESSION['user_id'])) {
                 </pre>
                 <div id='main-box'>
                     <div dir='ltr' class='header-box'>
+                        <button onclick="window.location.href='/panel/logout.php'">
+    خروج از حساب
+</button>
                         <button id='post-part-btn'>آپلود پست</button>
                         <button id='settings-part-btn'>تنظیمات کاربری</button>
                         <button id='status-part-btn'>آمار پروفایل</button>
