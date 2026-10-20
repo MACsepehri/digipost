@@ -2,7 +2,15 @@
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+require_once __DIR__ . '/../assets/database/_/handler.php';
+
+$db = new Database();
+$user = $db->users();
+
+$userData = $user->get((int) $_SESSION['user_id']);
+
+if (!$userData) {
+    session_destroy();
     header('Location: /panel/auth.php');
     exit;
 }
@@ -49,6 +57,13 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </main>
 
+    <script>
+        const userInfo = {
+            username: '<?php echo $_SESSION['username'] ?>',
+            bio: '<?php echo $userData['description'] ?? 'شما هنوز بیوگرافی ثبت نکردید.' ?>',
+            imageSrc: '<?php echo $userData['image_url'] ?? '/assets/image/logo/profile.png' ?>'
+        }
+    </script>
     <script src="/assets/js/panel.js"></script>
 </body>
 </html>
