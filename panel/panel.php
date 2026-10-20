@@ -28,23 +28,27 @@ if (!isset($_SESSION['user_id'])) {
             <div>
                 <h2>پنل کاربری</h2>
             </div>
-            <div style='margin: auto; text-align: center;'>
-                <h3 style='font-size: 30px;'>خوش آمدی <?php echo $_SESSION['username'] ?>!</h3>
-                <pre>اینجا آزادی که اخبار یا هر متن یا مقاله ای
-درباره تکنولوژی دوست داری پست کنی.
-                </pre>
-                <div id='main-box'>
-                    <div dir='ltr' class='header-box'>
-                        <button onclick="window.location.href='/panel/logout.php'">
-    خروج از حساب
+            <div style='margin: auto; text-align: center;' id='main-box'>
+                <div dir='ltr' class='header-box'>
+                    <button onclick="window.location.href='/panel/logout.php'">
+خروج از حساب
 </button>
-                        <button id='post-part-btn'>آپلود پست</button>
-                        <button id='settings-part-btn'>تنظیمات کاربری</button>
-                        <button id='status-part-btn'>آمار پروفایل</button>
-                    </div>
+                    <button id='post-part-btn'>آپلود پست</button>
+                    <button id='settings-part-btn'>تنظیمات کاربری</button>
+                    <button id='status-part-btn'>آمار پروفایل</button>
+                </div>
+                <div id='panel-content'>
+                    <h3>خوش آمدی <?php echo $_SESSION['username'] ?>!</h3>
+                    <pre>اینجا آزادی که اخبار یا هر متن یا مقاله ای
+درباره تکنولوژی دوست داری پست کنی.
+یا یک پروفایل خفن درست کنی و دانشی
+که از تکنولوژی داری رو به رخ بکشی!
+                    </pre>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="/assets/js/panel.js"></script>
 </body>
 </html>
